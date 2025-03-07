@@ -18,10 +18,21 @@ body {
     background-color: var(--color-bg);
 }
 
+header,
 main,
 footer {
     max-width: 700px;
     margin: 2rem auto;
+}
+
+header {
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+header h1 {
+    font-weight: 300;
 }
 
 footer {
@@ -45,5 +56,6 @@ h2,
 h3,
 h4 {
     margin: 0rem;
+    color: var(--color-primary);
     margin-bottom: 1rem;
 }

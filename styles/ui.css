@@ -12,13 +12,13 @@ input {
 output,
 pre {
     display: block;
-    font-weight: bold;
     padding-bottom: .5rem;
     opacity: 0.8;
 }
 
 pre,
 pre * {
+    font-weight: bold !important;
     font-family: 'Courier New', Courier, monospace !important;
     background-color: var(--color-bg-3) !important;
 }
@@ -43,7 +43,8 @@ button {
 }
 
 label {
-    font-weight: 500;
+    margin-top: 1rem;
+    font-weight: 700;
     display: block;
     margin-bottom: 0.5rem;
 }

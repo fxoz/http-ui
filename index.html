@@ -9,19 +9,72 @@
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/ui.css">
     <link rel="stylesheet" href="styles/loader.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="styles/dropdown.css">
+    <link rel="stylesheet" href="styles/checkbox.css">
+    <title>HTTP-UI</title>
 </head>
 
 <body>
+    <header>
+        <h1>
+            http-ui
+        </h1>
+    </header>
     <main>
         <section style="position: relative;">
             <h2>Request</h2>
 
+            <label for="inputProtocol">Protocol</label>
+            <br />
+            <div class="custom-dropdown">
+                <select id="inputProtocol" disabled style="cursor: not-allowed !important;">
+                    <option value="protocol">Detect</option>
+                </select>
+            </div>
+            <br />
+
+            <label for="inputMethod">Method</label>
+
+            <br />
+            <div class="custom-dropdown">
+                <select id="inputMethod">
+                    <option value="get">GET</option>
+                    <option value="post">POST</option>
+                    <option value="put">PUT</option>
+                    <option value="delete">DELETE</option>
+                    <option value="patch">PATCH</option>
+                    <option value="head">HEAD</option>
+                    <option value="options">OPTIONS</option>
+                </select>
+            </div>
+            <br />
+
             <label for="inputUrl">URL</label>
             <input type="text" id="inputUrl" placeholder="https://example.com" required>
-            <!-- <label for="inputUrl">User Agent</label>
-            <input type="text" id="inputUserAgent" placeholder="Mozilla/5.0"> -->
-            <button id="buttonRequest">Request</button>
+
+            <label for="inputCorsProxy">CORS Proxy</label>
+
+            <br />
+            <div class="custom-dropdown">
+                <select id="inputCorsProxy">
+                    <option value="off">OFF</option>
+                    <option value="euOrg">cors.eu.org</option>
+                    <!-- <option value="corsproxyIo">corsproxy.io</option> -->
+                    <option value="allOrigins">allorigins.win</option>
+                    <option value="fringeZone">cors-proxy.fringe.zone</option>
+                    <!-- <option value="sirjosh">cors-get-proxy.sirjosh.workers.dev</option> -->
+                </select>
+            </div>
+            <br />
+
+            <label>
+                <input type="checkbox" id="inputToggleJson">
+                JSON Request
+            </label>
+            <br />
+
+            <button id="buttonRequest">Fetch</button>
+
             <span id="loadingAnimation" style="display: none;">
                 <span class="loader"></span>
             </span>
@@ -30,12 +83,24 @@
         <section id="sectionResponse" style="display: none;">
             <h2>Response</h2>
 
-            <label for="outputStatus">Status</label>
+            <div id="hiddenIfError">
+                <button id="outputDownload">Download Body</button>
+                <br />
+                <br />
+                <label for="outputUrl">URL</label>
+                <pre id="outputUrl"></pre>
+                <label for="outputLatency">Latency</label>
+                <output id="outputLatency"></output>
+                <label for="outputSize">Estimated Size</label>
+                <output id="outputSize"></output>
+                <label for="outputStatus">Status</label>
+            </div>
             <output id="outputStatus"></output>
             <label for="outputHeaders">Headers</label>
             <pre id="outputHeaders"></pre>
             <label for="outputBody">Body</label>
             <pre id="outputBody"></pre>
+            <img id="outputImage" style="display: none;" alt="Image" height="300">
         </section>
     </main>
     <footer>
@@ -52,13 +117,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@catppuccin/highlightjs@1.0.0/css/catppuccin-mocha.css">
+    <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@catppuccin/highlightjs@1.0.0/css/catppuccin-mocha.css"> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/http.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/json.min.js"></script>
 
-    <script src="http-status-codes.js"></script>
-    <script src="index.js"></script>
-
+    <script src="scripts/http-status-codes.js"></script>
+    <script src="scripts/cors-proxies.js"></script>
+    <script src="scripts/protocol-display.js"></script>
+    <script src="scripts/process-body.js"></script>
+    <script src="scripts/download-body.js"></script>
+    <script src="scripts/index.js"></script>
 </body>
 
 </html>
