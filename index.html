@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/ui.css">
+    <link rel="stylesheet" href="styles/loader.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+        <section style="position: relative;">
+            <h2>Request</h2>
+
+            <label for="inputUrl">URL</label>
+            <input type="text" id="inputUrl" placeholder="https://example.com" required>
+            <!-- <label for="inputUrl">User Agent</label>
+            <input type="text" id="inputUserAgent" placeholder="Mozilla/5.0"> -->
+            <button id="buttonRequest">Request</button>
+            <span id="loadingAnimation" style="display: none;">
+                <span class="loader"></span>
+            </span>
+
+        </section>
+        <section id="sectionResponse" style="display: none;">
+            <h2>Response</h2>
+
+            <label for="outputStatus">Status</label>
+            <output id="outputStatus"></output>
+            <label for="outputHeaders">Headers</label>
+            <pre id="outputHeaders"></pre>
+            <label for="outputBody">Body</label>
+            <pre id="outputBody"></pre>
+        </section>
+    </main>
+    <footer>
+        <p>
+            <a href="https://frost.cat/impressum" target="_blank">Imprint</a> |
+            Privacy:
+            <a href="https://www.cloudflare.com/de-de/privacypolicy/" target="_blank">Cloudflare</a> /
+            <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement/"
+                target="_blank">GitHub</a> /
+            <a href="https://www.jsdelivr.com/documentation#id-privacy-policy" target="_blank">jsDelivr</a>
+        </p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@catppuccin/highlightjs@1.0.0/css/catppuccin-mocha.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/http.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/json.min.js"></script>
+
+    <script src="http-status-codes.js"></script>
+    <script src="index.js"></script>
+
+</body>
+
+</html>

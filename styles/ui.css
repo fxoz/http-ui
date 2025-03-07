@@ -1,0 +1,49 @@
+input {
+    background-color: var(--color-bg-2);
+    color: var(--color-text);
+    border: none;
+    padding: 0.5rem;
+    width: 100%;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+output,
+pre {
+    display: block;
+    font-weight: bold;
+    padding-bottom: .5rem;
+    opacity: 0.8;
+}
+
+pre,
+pre * {
+    font-family: 'Courier New', Courier, monospace !important;
+    background-color: var(--color-bg-3) !important;
+}
+
+pre {
+    padding: 1rem;
+    margin-top: 0;
+    overflow-x: auto;
+    margin-bottom: 1rem;
+    border: 2px solid var(--color-bg-3);
+    border-radius: 0.25rem;
+}
+
+button {
+    background-color: var(--color-primary);
+    color: var(--color-bg);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+label {
+    font-weight: 500;
+    display: block;
+    margin-bottom: 0.5rem;
+}

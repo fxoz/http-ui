@@ -1,0 +1,49 @@
+:root {
+    --color-text: hsl(226deg, 64%, 88%);
+    --color-text-light: hsl(231deg, 11%, 47%);
+    --color-bg: hsl(240deg, 21%, 15%);
+    --color-bg-1: hsl(240, 22%, 19%);
+    --color-bg-2: hsl(237, 20%, 24%);
+    --color-bg-3: hsl(240, 22%, 26%);
+    --color-primary: hsl(189deg, 71%, 73%);
+}
+
+* {
+    color: var(--color-text);
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-bg);
+}
+
+main,
+footer {
+    max-width: 700px;
+    margin: 2rem auto;
+}
+
+footer {
+    opacity: 0.5;
+}
+
+h1 {
+    font-size: 1.5rem;
+}
+
+
+section {
+    padding: 1rem;
+    background-color: var(--color-bg-1);
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+section h1,
+h2,
+h3,
+h4 {
+    margin: 0rem;
+    margin-bottom: 1rem;
+}
